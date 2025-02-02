@@ -1,1 +1,21 @@
+# ❌ Ignorisanje appsettings.json da se tajni podaci ne commit-uju
 EventManagerAPI/appsettings.json
+
+# ❌ Ignorisanje build fajlova
+bin/
+obj/
+
+# ❌ Ignorisanje lokalnih postavki
+*.user
+*.suo
+*.vs
+.vscode/
+
+# ❌ Ignorisanje sistema za paket menadžment
+node_modules/
+*.lock
+
+# Visual Studio specifični fajlovi
+.vs/
+*.sln.cache
+*.csproj.user
