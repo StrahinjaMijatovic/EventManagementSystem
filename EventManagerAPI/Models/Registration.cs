@@ -11,5 +11,5 @@ public class Registration
 
     public Guid ParticpantId { get; set; }
 
-    public Status Status { get; set; }
+    public EStatus Status { get; set; }
 }

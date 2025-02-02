@@ -1,6 +1,6 @@
 namespace EventManagerAPI.Models.Enums;
 
-public enum Status
+public enum EStatus
 {
     PENDING,
     CONFIRMED,

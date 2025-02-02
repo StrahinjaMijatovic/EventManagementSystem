@@ -6,11 +6,12 @@ public class Event
 {
     public Guid Id { get; set; }
 
-    public string Name { get; set; }
+    //string is empty onda će user.Name biti prazan string "", što sprečava NullReferenceException.
+    public string Name { get; set; }  = string.Empty;
 
-    public string Description { get; set; }
+    public string Description { get; set; }  = string.Empty;
 
-    public string Location { get; set; }
+    public string Location { get; set; }  = string.Empty;
 
     public DateTime Date { get; set; }
 

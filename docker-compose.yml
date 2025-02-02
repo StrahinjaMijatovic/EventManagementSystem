@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  # PostgreSQL baza podataka
+  db:
+    image: postgres:latest
+    container_name: eventmanager_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: eventmanager
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # ASP.NET Core aplikacija
+  app:
+    image: eventmanagerapi
+    container_name: eventmanager_app
+    build:
+      context: ./EventManagerAPI
+      dockerfile: Dockerfile
+    environment:
+      ConnectionStrings__DefaultConnection: "Host=db;Database=eventmanager;Username=postgres;Password=postgres"
+    ports:
+      - "5000:80"
+    depends_on:
+      - db
+
+# Volumen za PostgreSQL podatke
+volumes:
+  postgres_data:
